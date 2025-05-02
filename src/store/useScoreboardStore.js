@@ -29,7 +29,11 @@ export const useScoreboardStore = create((set) => ({
       ),
     })),
 
-    removePlayer: (id)
+    removePlayer: (id)=>
+      set((state)=> ({
+        players: state.players.filter((player) =>
+        player.id !== id)
+      }))
 
 
 }));
